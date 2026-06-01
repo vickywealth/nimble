@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Placeholder Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #65b63d;
+            margin-bottom: 10px;
+        }
+        .instructions {
+            background: #f0f9e8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #65b63d;
+        }
+        .resource-card {
+            background: #fafafa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        button {
+            background: #65b63d;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        button:hover {
+            background: #5a9e36;
+        }
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+        .steps li {
+            counter-increment: step;
+            margin: 10px 0;
+            padding-left: 40px;
+            position: relative;
+        }
+        .steps li::before {
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            background: #65b63d;
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 PDF Placeholder Generator</h1>
+        <p>Use this tool to create simple placeholder PDFs for testing your resource downloads.</p>
+
+        <div class="instructions">
+            <h3>🎯 Purpose</h3>
+            <p>These placeholder PDFs allow you to test the download functionality on your website before creating the actual guides. They're simple text files converted to PDF format.</p>
+        </div>
+
+        <h2>Available Resources</h2>
+
+        <div class="resource-card">
+            <h3>1. Complete Startup Launch Checklist</h3>
+            <p><strong>Pages:</strong> 12 | <strong>Category:</strong> Checklist</p>
+            <p><strong>Content:</strong> Step-by-step guide to launching your business in 30 days</p>
+            <button onclick="generatePDF('startup-checklist.pdf', 'Complete Startup Launch Checklist', 'checklist')">
+                Generate Placeholder PDF
+            </button>
+        </div>
+
+        <div class="resource-card">
+            <h3>2. Small Business Tax Guide 2025</h3>
+            <p><strong>Pages:</strong> 24 | <strong>Category:</strong> Guide</p>
+            <p><strong>Content:</strong> Everything you need to know about business taxes and deductions</p>
+            <button onclick="generatePDF('tax-guide-2025.pdf', 'Small Business Tax Guide 2025', 'guide')">
+                Generate Placeholder PDF
+            </button>
+        </div>
+
+        <div class="resource-card">
+            <h3>3. Zero-Budget Marketing Playbook</h3>
+            <p><strong>Pages:</strong> 18 | <strong>Category:</strong> Playbook</p>
+            <p><strong>Content:</strong> Grow your business without spending on ads</p>
+            <button onclick="generatePDF('marketing-playbook.pdf', 'Zero-Budget Marketing Playbook', 'playbook')">
+                Generate Placeholder PDF
+            </button>
+        </div>
+
+        <div class="instructions">
+            <h3>📋 How to Use</h3>
+            <ol class="steps">
+                <li>Click "Generate Placeholder PDF" for any resource above</li>
+                <li>The PDF will download to your computer</li>
+                <li>Move the file to: <code>public/pdfs/</code> in your project</li>
+                <li>Refresh your website and test the download</li>
+            </ol>
+        </div>
+
+        <div class="instructions">
+            <h3>⚠️ Note</h3>
+            <p>These are <strong>placeholder PDFs</strong> for testing only. For production, create actual content-rich guides using Google Docs, Canva, or hire a content writer.</p>
+            <p>See <code>public/pdfs/README.md</code> for detailed instructions on creating professional PDFs.</p>
+        </div>
+    </div>
+
+    <script>
+        function generatePDF(filename, title, type) {
+            // Create content based on type
+            let content = '';
+            
+            if (type === 'checklist') {
+                content = `
+${title}
+${'='.repeat(50)}
+
+PLACEHOLDER DOCUMENT - FOR TESTING ONLY
+
+This is a placeholder PDF for testing the download functionality on your Nimble Consulting website.
+
+CHECKLIST ITEMS:
+☐ Business Name Selection
+☐ LLC/Corp Formation
+☐ EIN Registration
+☐ Business Banking Setup
+☐ Insurance Requirements
+☐ Licenses & Permits
+☐ Accounting System Setup
+☐ Website Development
+☐ Marketing Plan Creation
+☐ First 90-Day Action Plan
+
+Create the actual content for this guide using:
+- Google Docs (File → Download → PDF)
+- Canva (Download as PDF Print)
+- Microsoft Word (Save as PDF)
+
+Place the final PDF in: public/pdfs/${filename}
+                `.trim();
+            } else if (type === 'guide') {
+                content = `
+${title}
+${'='.repeat(50)}
+
+PLACEHOLDER DOCUMENT - FOR TESTING ONLY
+
+This is a placeholder PDF for testing the download functionality on your Nimble Consulting website.
+
+CHAPTERS:
+1. Understanding Business Taxes
+2. Tax Brackets & Rates 2025
+3. Deductible Expenses (50+ Items)
+4. Quarterly Tax Payments
+5. S-Corp vs LLC Tax Comparison
+6. Record Keeping Best Practices
+7. Tax Filing Deadlines
+8. Working with a CPA
+
+Create the actual content for this guide using:
+- Google Docs (File → Download → PDF)
+- Canva (Download as PDF Print)
+- Microsoft Word (Save as PDF)
+
+Place the final PDF in: public/pdfs/${filename}
+                `.trim();
+            } else {
+                content = `
+${title}
+${'='.repeat(50)}
+
+PLACEHOLDER DOCUMENT - FOR TESTING ONLY
+
+This is a placeholder PDF for testing the download functionality on your Nimble Consulting website.
+
+STRATEGIES INCLUDED:
+1. Social Media Content Calendar
+2. SEO Quick-Win Strategies
+3. Email Marketing Templates
+4. Referral Program Framework
+5. Partnership Outreach Scripts
+6. Content Marketing Plan
+7. Community Building Tactics
+8. PR & Media Outreach
+
+Create the actual content for this guide using:
+- Google Docs (File → Download → PDF)
+- Canva (Download as PDF Print)
+- Microsoft Word (Save as PDF)
+
+Place the final PDF in: public/pdfs/${filename}
+                `.trim();
+            }
+
+            // Create a blob and download as PDF
+            // Note: This creates a text file with .pdf extension for testing
+            // For real PDFs, use proper PDF generation tools
+            const blob = new Blob([content], { type: 'application/pdf' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+
+            alert(`✅ ${filename} downloaded!\n\nMove this file to: public/pdfs/\n\nNote: This is a placeholder. Create actual PDF content for production use.`);
+        }
+    </script>
+</body>
+</html>
