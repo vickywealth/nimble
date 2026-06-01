@@ -37,7 +37,7 @@ export default function WhyNimbleSection() {
   }
 
   return (
-    <section className="section-padding bg-white">
+    <section className="py-12 lg:py-16 bg-white">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div className="animate-on-scroll">

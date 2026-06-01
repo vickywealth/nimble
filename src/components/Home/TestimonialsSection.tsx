@@ -54,7 +54,7 @@ export default function TestimonialsSection() {
   }, [])
 
   return (
-    <section className="section-padding" style={{ background: 'hsl(var(--accent))' }}>
+    <section className="py-12 lg:py-16" style={{ background: 'hsl(var(--accent))' }}>
       <div className="section-container">
         <div className="text-center mb-14 animate-on-scroll">
           <span className="section-eyebrow">Client Success</span>

@@ -36,7 +36,7 @@ export default function VideoCTASection() {
   }
 
   return (
-    <section className="section-padding bg-white">
+    <section className="py-12 lg:py-16 bg-white">
       <div className="section-container">
         <div className="rounded-3xl overflow-hidden relative animate-on-scroll" 
           style={{ background: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)' }}>

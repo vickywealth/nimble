@@ -10,12 +10,8 @@ import PDFResourcesSection from './PDFResourcesSection'
 import FAQSection from './FAQSection'
 import BlogPreviewSection from './BlogPreviewSection'
 import FloatingCTA from '../ui/FloatingCTA'
-import ExitIntentPopup from '../ui/ExitIntentPopup'
-import { useState } from 'react'
 
 export default function HomePage() {
-  const [isPDFModalOpen, setIsPDFModalOpen] = useState(false)
-
   return (
     <main>
       <SEO 
@@ -78,12 +74,11 @@ export default function HomePage() {
       <ServicesPreviewSection />
       <WhyNimbleSection />
       <TestimonialsSection />
-      <PDFResourcesSection onModalStateChange={setIsPDFModalOpen} />
+      <PDFResourcesSection />
       <VideoCTASection />
       <FAQSection />
       <BlogPreviewSection />
       <FloatingCTA />
-      <ExitIntentPopup shouldSuppress={isPDFModalOpen} />
     </main>
   )
 }

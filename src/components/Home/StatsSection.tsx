@@ -58,7 +58,7 @@ export default function StatsSection() {
   }, [])
 
   return (
-    <section className="section-padding relative overflow-hidden bg-white">
+    <section className="py-12 lg:py-16 relative overflow-hidden bg-white">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-[0.03]">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">

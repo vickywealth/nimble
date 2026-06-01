@@ -14,8 +14,6 @@ const ContactPage = lazy(() => import('./components/Contact'))
 const TestimonialsPage = lazy(() => import('./components/Testimonials'))
 const BlogPage = lazy(() => import('./components/Blog'))
 const BlogPostPage = lazy(() => import('./components/Blog').then(module => ({ default: module.BlogPostPage })))
-const ResourcesPage = lazy(() => import('./components/Resources').then(module => ({ default: module.ResourcesPage })))
-const ResourceDownloadPage = lazy(() => import('./components/Resources').then(module => ({ default: module.ResourceDownloadPage })))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -30,7 +28,7 @@ function AppContent() {
     <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       <Suspense fallback={
-        <div className="flex-1 flex items-center justify-center">
+        <div className="flex-1 flex items-center justify-center min-h-[calc(100vh-80px)]">
           <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin"></div>
         </div>
       }>
@@ -45,8 +43,6 @@ function AppContent() {
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
-          <Route path="/resources" element={<ResourcesPage />} />
-          <Route path="/resources/:slug" element={<ResourceDownloadPage />} />
           {/* Fallback */}
           <Route path="*" element={<HomePage />} />
         </Routes>

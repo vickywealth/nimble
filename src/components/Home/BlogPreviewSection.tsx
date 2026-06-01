@@ -49,7 +49,7 @@ export default function BlogPreviewSection() {
   }, [])
 
   return (
-    <section className="section-padding" style={{ background: 'hsl(var(--accent))' }}>
+    <section className="py-12 lg:py-16" style={{ background: 'hsl(var(--accent))' }}>
       <div className="section-container">
         <div className="flex items-end justify-between mb-12 animate-on-scroll">
           <div>

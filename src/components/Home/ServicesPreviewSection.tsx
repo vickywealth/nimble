@@ -71,7 +71,7 @@ export default function ServicesPreviewSection() {
   }
 
   return (
-    <section className="section-padding relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
+    <section className="py-12 lg:py-16 relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50">
       <div className="section-container">
         {/* Header - Top of Section */}
         <div className="text-center mb-16 animate-on-scroll">

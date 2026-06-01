@@ -72,7 +72,7 @@ export default function FAQSection() {
   }
 
   return (
-    <section className="section-padding" style={{ background: 'hsl(var(--accent))' }}>
+    <section className="py-12 lg:py-16" style={{ background: 'hsl(var(--accent))' }}>
       <SchemaMarkup type="faq" data={faqSchemaData} />
       <div className="section-container">
         {/* Header */}
