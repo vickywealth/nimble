@@ -100,7 +100,7 @@ export default function BookPage() {
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Date</span>
-                <span className="font-medium">{dates[selectedDate]?.full}</span>
+                <span className="font-medium">{selectedDate !== null ? dates[selectedDate]?.full : 'Not selected'}</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-muted-foreground">Time</span>

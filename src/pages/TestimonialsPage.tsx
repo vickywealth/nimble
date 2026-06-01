@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Star, ArrowRight, TrendingUp, Quote } from 'lucide-react'
+import { Star, ArrowRight, Quote } from 'lucide-react'
 
 function useScrollReveal() {
   useEffect(() => {
@@ -31,7 +31,6 @@ const videoTestimonials = [
 export default function TestimonialsPage() {
   useScrollReveal()
   const [filter, setFilter] = useState('All')
-  const services = ['All', 'Business Incorporation', 'Marketing Services', 'Marketing + Website', 'Accounting & Operations', 'Startup Consulting', 'Website + Marketing']
   const filtered = filter === 'All' ? testimonials : testimonials.filter(t => t.service === filter)
 
   return (
